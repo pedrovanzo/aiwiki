@@ -8,9 +8,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "marked": "^15.0.0",
     "next": "15.3.3",
     "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "marked": "^15.0.0"
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "25.9.2",
+    "@types/react": "19.2.17",
+    "typescript": "6.0.3"
   }
 }

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/aiwiki',
+  basePath: process.env.NODE_ENV === 'production' ? '/aiwiki' : '',
   images: { unoptimized: true },
 };
 
