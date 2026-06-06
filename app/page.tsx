@@ -1,21 +1,30 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
   return (
     <main className="landing">
-      <div className="landing-logo">🧠</div>
-      <p className="landing-brand">AI Concepts Wiki</p>
+      <Image
+        src="/omb-ai.png"
+        alt="omb-ai logo"
+        width={200}
+        height={200}
+        className="logo-img"
+        priority
+      />
+
+      <p className="landing-brand">pedrovanzo&apos;s personal wiki</p>
 
       <h1>
-        Your personal <span>AI knowledge</span> reference.
+        A place to study and retain <span>AI knowledge.</span>
       </h1>
 
       <p className="landing-desc">
-        A curated, session-by-session record of AI concepts explored with Claude —
-        covering the Claude ecosystem, RAG, memory types, frameworks, and more.
+        Session-by-session notes from studying AI with Claude — covering the Claude ecosystem,
+        RAG, memory types, frameworks, and more. Written to actually stick.
       </p>
       <p className="landing-sub">
-        Concepts are flagged as covered or not covered so you always know where to pick up.
+        Topics are flagged as covered or not covered so it&apos;s always clear where to pick up next.
       </p>
 
       <div className="landing-actions">
