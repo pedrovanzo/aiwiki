@@ -186,32 +186,29 @@ body {
 /* Sub-items */
 .nav-children {
   padding-bottom: 4px;
+  margin-left: 28px;
+  border-left: 1px solid var(--border);
 }
 
 .nav-child {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 7px;
-  padding: 5px 16px 5px 20px;
+  padding: 5px 16px 5px 12px;
   color: var(--muted);
   text-decoration: none;
   font-size: 12.5px;
-  border-left: 2px solid transparent;
-  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  transition: color 0.15s, background 0.15s;
 }
 
 .nav-child:hover,
 .nav-child.active {
   color: var(--text);
-  border-left-color: var(--accent);
   background: rgba(124, 106, 247, 0.08);
 }
 
-.nav-child-num {
-  font-size: 10px;
-  color: var(--muted);
-  flex-shrink: 0;
-  opacity: 0.7;
+.nav-child.active {
+  color: var(--accent);
 }
 
 .nav-child-label {

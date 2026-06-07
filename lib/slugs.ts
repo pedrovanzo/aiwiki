@@ -32,4 +32,9 @@ export const SLUGS = [
   'framework-comparison',
   // VI. Preferred Systems & Tools
   'llm-preferences',
+  // VII. Standalone Questions & Principles
+  'context-windows',
+  'multi-llm-usage',
+  'learning-with-llms',
+  'delegating-to-ai',
 ];

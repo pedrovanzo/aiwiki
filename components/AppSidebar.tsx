@@ -91,6 +91,17 @@ const NAV: NavSection[] = [
       { num: '6.1', label: 'LLM Preferences & Usage Patterns', slug: 'llm-preferences', notCovered: true },
     ],
   },
+  {
+    num: 'VII',
+    label: 'Standalone Questions & Principles',
+    icon: '💡',
+    items: [
+      { num: '7.1', label: 'Context Windows in Claude\'s Ecosystem', slug: 'context-windows', notCovered: true },
+      { num: '7.2', label: 'Multi LLM Usage', slug: 'multi-llm-usage', notCovered: true },
+      { num: '7.3', label: 'Learning with LLMs', slug: 'learning-with-llms', notCovered: true },
+      { num: '7.4', label: 'Delegating Tasks to AI', slug: 'delegating-to-ai', notCovered: true },
+    ],
+  },
 ];
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
@@ -98,7 +109,7 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 export default function AppSidebar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({ 'I': true });
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
   function toggle(num: string) {
     setExpanded(e => ({ ...e, [num]: !e[num] }));
@@ -156,7 +167,6 @@ export default function AppSidebar() {
                   <span className="nav-group-label">
                     <span className="nav-group-icon">{section.icon}</span>
                     <span className="nav-group-text">
-                      <span className="nav-group-num">{section.num}.</span>
                       {section.label}
                     </span>
                     {section.partiallyCovered && (
@@ -183,7 +193,6 @@ export default function AppSidebar() {
                           onClick={close}
                           title={item.notCovered ? 'Not yet covered' : undefined}
                         >
-                          <span className="nav-child-num">{item.num}</span>
                           <span className="nav-child-label">{item.label}</span>
                           {item.notCovered && <span className="nav-child-dot" />}
                         </Link>
