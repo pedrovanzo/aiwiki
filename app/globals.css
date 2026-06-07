@@ -159,68 +159,86 @@ body {
   flex-shrink: 0;
 }
 
+/* Nav group label internals */
+.nav-group-text {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav-group-num {
+  font-size: 10px;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.badge-partial {
+  font-size: 10px;
+  color: #f59e0b;
+  flex-shrink: 0;
+  margin-left: 2px;
+}
+
 /* Sub-items */
 .nav-children {
   padding-bottom: 4px;
 }
 
 .nav-child {
-  display: block;
-  padding: 5px 20px 5px 32px;
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  padding: 5px 16px 5px 20px;
   color: var(--muted);
   text-decoration: none;
   font-size: 12.5px;
   border-left: 2px solid transparent;
   transition: color 0.15s, border-color 0.15s, background 0.15s;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  cursor: default;
-}
-
-.nav-child.nav-child-group {
-  width: 100%;
-  background: none;
-  border: none;
-  border-left: 2px solid transparent;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  text-align: left;
-  color: var(--muted);
-  font-size: 12.5px;
-}
-
-a.nav-child,
-.nav-child[href] {
-  cursor: pointer;
 }
 
 .nav-child:hover,
-.nav-child.active,
-.nav-child.nav-child-group:hover {
+.nav-child.active {
   color: var(--text);
   border-left-color: var(--accent);
   background: rgba(124, 106, 247, 0.08);
 }
 
-/* Mocked (no href) — slightly dimmer */
-.nav-child-mock {
-  opacity: 0.6;
-  font-style: italic;
-}
-
-/* Suggested marker */
-.nav-group-header.suggested .nav-group-label,
-.nav-child.suggested {
-  opacity: 0.75;
-}
-
-.badge-suggested {
-  font-size: 9px;
+.nav-child-num {
+  font-size: 10px;
   color: var(--muted);
   flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.nav-child-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Not-covered items */
+.nav-child.not-covered {
+  opacity: 0.45;
+}
+
+.nav-child.not-covered:hover {
+  opacity: 0.7;
+}
+
+.nav-child-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--muted);
+  opacity: 0.5;
+  flex-shrink: 0;
+  margin-left: auto;
 }
 
 .sidebar-toggle {

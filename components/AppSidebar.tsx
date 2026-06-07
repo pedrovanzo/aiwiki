@@ -5,197 +5,117 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-interface SubItem {
+interface NavItem {
+  num: string;
   label: string;
-  href?: string;
-  children?: SubItem[];
-  suggested?: boolean;
+  slug: string;
+  notCovered?: boolean;
 }
 
-interface NavGroup {
+interface NavSection {
+  num: string;
   label: string;
   icon: string;
-  href?: string;
-  suggested?: boolean;
-  children?: SubItem[];
+  partiallyCovered?: boolean;
+  items: NavItem[];
 }
 
-const NAV: NavGroup[] = [
+const NAV: NavSection[] = [
   {
-    label: 'Welcome & Introduction',
-    icon: '🌐',
-    children: [
-      { label: 'Getting Started' },
-      { label: 'Study Roadmap' },
-    ],
-  },
-  {
-    label: 'AI Basics & Foundations',
-    icon: '🧊',
-    children: [
-      { label: 'Neural Networks Overview', suggested: true },
-      { label: 'Transformers Architecture', suggested: true },
-      { label: 'Tokenization & Context Windows', suggested: true },
-    ],
-  },
-  {
-    label: 'Large Language Models (LLMs)',
-    icon: '💬',
-    children: [
-      { label: 'Overview & Core Concepts' },
-      { label: 'Major Edge Cases & Limitations' },
-      { label: 'LLM Evaluation Metrics', suggested: true },
-    ],
-  },
-  {
-    label: 'LLM Tools Ecosystem',
-    icon: '🛠️',
-    children: [
-      { label: 'Google Gemini' },
-      { label: 'OpenAI ChatGPT' },
-      { label: 'Anthropic Claude' },
-    ],
-  },
-  {
-    label: 'Prompt Engineering',
+    num: 'I',
+    label: 'Core AI Concepts',
     icon: '🧠',
-    children: [
-      { label: 'Zero-Shot Prompting' },
-      { label: 'Few-Shot Prompting', suggested: true },
-      { label: 'Chain-of-Thought (CoT) Prompting' },
-      { label: 'System Prompts & Personas', suggested: true },
+    items: [
+      { num: '1.1', label: 'What is RAG', slug: 'what-is-rag' },
+      { num: '1.2', label: 'RAG vs Manual Context Injection', slug: 'rag-vs-manual-context' },
+      { num: '1.3', label: 'Language & Output Quality', slug: 'language-output-quality' },
     ],
   },
   {
-    label: 'RAG',
-    icon: '📚',
-    children: [
-      { label: 'Introduction to RAG', href: '/concepts' },
-      { label: 'Vector Databases & Embeddings', suggested: true },
-      { label: 'Naive RAG vs. Advanced RAG', suggested: true },
-      { label: 'RAG Common Failure Points', suggested: true },
-    ],
-  },
-  {
+    num: 'II',
     label: 'Agentic AI',
     icon: '🤖',
-    children: [
-      { label: 'Introduction to Agents' },
-      { label: 'Core Agent Architecture', suggested: true },
-      {
-        label: 'Agentic AI Memory',
-        children: [
-          { label: 'Short-Term / Conversation Memory' },
-          { label: 'Long-Term / Semantic Memory' },
-        ],
-      },
-      { label: 'Tools & Function Calling' },
-      { label: 'Multi-Agent Orchestration', suggested: true },
-      { label: 'Edge Cases Requiring Agents' },
+    items: [
+      { num: '2.1', label: 'What is Agentic AI', slug: 'what-is-agentic-ai' },
+      { num: '2.2', label: 'Agentic Memory', slug: 'agentic-memory' },
+      { num: '2.3', label: 'Memory Types & Usage Guide', slug: 'memory-types' },
+      { num: '2.4', label: 'Memory Frameworks', slug: 'memory-frameworks' },
+      { num: '2.5', label: 'RAG Pipeline — Components', slug: 'rag-pipeline-components' },
+      { num: '2.6', label: 'RAG Pipeline — Implementation', slug: 'rag-pipeline-implementation' },
+      { num: '2.7', label: 'RAG Frameworks & Tools', slug: 'rag-frameworks' },
+      { num: '2.8', label: 'Subagents', slug: 'subagents' },
+      { num: '2.9', label: 'MCP Servers', slug: 'mcp-servers', notCovered: true },
     ],
   },
   {
-    label: 'Advanced AI Concepts',
-    icon: '🔬',
-    suggested: true,
-    children: [
-      { label: 'Fine-Tuning vs. RAG', suggested: true },
-      { label: 'Local LLMs & Quantization', suggested: true },
-      { label: 'AI Safety & Alignment', suggested: true },
+    num: 'III',
+    label: 'The Claude Ecosystem',
+    icon: '🔷',
+    items: [
+      { num: '3.1', label: 'Claude Products Overview', slug: 'claude-products' },
+      { num: '3.2', label: 'CLAUDE.md', slug: 'claude-md' },
+      { num: '3.3', label: 'Skills', slug: 'skills' },
+      { num: '3.4', label: 'Hooks', slug: 'hooks' },
+      { num: '3.5', label: 'The Task Tool', slug: 'task-tool' },
+      { num: '3.6', label: 'MCP Servers in Claude', slug: 'mcp-servers-claude', notCovered: true },
+      { num: '3.7', label: 'Multilingual Usage', slug: 'multilingual-usage' },
     ],
   },
   {
-    label: 'Resources & Links',
-    icon: '📖',
-    children: [
-      { label: 'Useful Study URLs' },
-      { label: 'Research Papers' },
-      { label: 'Tool Documentation' },
+    num: 'IV',
+    label: 'RAG & Knowledge Pipelines',
+    icon: '📚',
+    partiallyCovered: true,
+    items: [
+      { num: '4.1', label: 'When to Use RAG', slug: 'when-to-use-rag' },
+      { num: '4.2', label: 'Choosing a Vector Database', slug: 'vector-databases' },
+      { num: '4.3', label: 'Choosing an Embedding Model', slug: 'embedding-models', notCovered: true },
+      { num: '4.4', label: 'Prompt Engineering for RAG', slug: 'prompt-engineering-rag', notCovered: true },
+    ],
+  },
+  {
+    num: 'V',
+    label: 'Hands-On Reference',
+    icon: '🗂️',
+    items: [
+      { num: '5.1', label: 'Memory Type Decision Table', slug: 'memory-decision-table' },
+      { num: '5.2', label: 'RAG vs Skills vs CLAUDE.md', slug: 'rag-vs-skills-vs-claude-md' },
+      { num: '5.3', label: 'Framework Comparison Table', slug: 'framework-comparison' },
+    ],
+  },
+  {
+    num: 'VI',
+    label: 'Preferred Systems & Tools',
+    icon: '⚙️',
+    items: [
+      { num: '6.1', label: 'LLM Preferences & Usage Patterns', slug: 'llm-preferences', notCovered: true },
     ],
   },
 ];
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
-function NavChildItem({ item, depth = 0, onClose }: { item: SubItem; depth?: number; onClose: () => void }) {
-  const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-  const hasChildren = item.children && item.children.length > 0;
-  const isActive = item.href ? pathname === item.href : false;
-
-  const paddingLeft = 32 + depth * 12;
-
-  if (hasChildren) {
-    return (
-      <div>
-        <button
-          className={`nav-child nav-child-group${isActive ? ' active' : ''}`}
-          style={{ paddingLeft }}
-          onClick={() => setOpen(o => !o)}
-        >
-          <span>{item.label}</span>
-          <svg className={`nav-chevron${open ? ' open' : ''}`} width="10" height="10" viewBox="0 0 12 12" fill="none">
-            <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </button>
-        {open && (
-          <div>
-            {item.children!.map(child => (
-              <NavChildItem key={child.label} item={child} depth={depth + 1} onClose={onClose} />
-            ))}
-          </div>
-        )}
-      </div>
-    );
-  }
-
-  if (item.href) {
-    return (
-      <Link
-        href={item.href}
-        className={`nav-child${isActive ? ' active' : ''}${item.suggested ? ' suggested' : ''}`}
-        style={{ paddingLeft }}
-        onClick={onClose}
-      >
-        {item.label}
-      </Link>
-    );
-  }
-
-  return (
-    <span
-      className={`nav-child nav-child-mock${item.suggested ? ' suggested' : ''}`}
-      style={{ paddingLeft }}
-    >
-      {item.label}
-    </span>
-  );
-}
-
 export default function AppSidebar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({
-    'Welcome & Introduction': true,
-  });
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({ 'I': true });
 
-  function toggle(label: string) {
-    setExpanded(e => ({ ...e, [label]: !e[label] }));
+  function toggle(num: string) {
+    setExpanded(e => ({ ...e, [num]: !e[num] }));
   }
+
+  function close() { setOpen(false); }
 
   return (
     <>
-      <button
-        className="sidebar-toggle"
-        onClick={() => setOpen(o => !o)}
-        aria-label="Toggle navigation"
-      >
+      <button className="sidebar-toggle" onClick={() => setOpen(o => !o)} aria-label="Toggle navigation">
         ☰
       </button>
 
       <nav className={`sidebar${open ? ' open' : ''}`}>
+        {/* Logo */}
         <div className="sidebar-logo-area">
-          <Link href="/" onClick={() => setOpen(false)}>
+          <Link href="/" onClick={close}>
             <Image
               src={`${BASE}/omb-ai.png`}
               alt="omb-ai logo"
@@ -209,45 +129,66 @@ export default function AppSidebar() {
           <span className="sidebar-brand">pedrovanzo&apos;s wiki</span>
         </div>
 
+        {/* Home */}
         <div className="nav-groups">
-          {/* Home — plain link */}
           <Link
             href="/"
             className={`nav-item${pathname === '/' ? ' active' : ''}`}
-            onClick={() => setOpen(false)}
+            onClick={close}
           >
             🏠 Home
           </Link>
 
-          {/* Topic groups */}
-          {NAV.map(group => {
-            const isOpen = expanded[group.label] ?? false;
+          {/* Sections */}
+          {NAV.map(section => {
+            const isOpen = expanded[section.num] ?? false;
+            const sectionActive = section.items.some(
+              i => pathname === `/topics/${i.slug}`
+            );
 
             return (
-              <div key={group.label} className="nav-group">
+              <div key={section.num} className="nav-group">
                 <button
-                  className={`nav-group-header${group.suggested ? ' suggested' : ''}`}
-                  onClick={() => toggle(group.label)}
+                  className={`nav-group-header${sectionActive ? ' active' : ''}`}
+                  onClick={() => toggle(section.num)}
                   aria-expanded={isOpen}
                 >
                   <span className="nav-group-label">
-                    <span className="nav-group-icon">{group.icon}</span>
-                    {group.label}
-                    {group.suggested && <span className="badge-suggested" title="Suggested by Gemini">✦</span>}
+                    <span className="nav-group-icon">{section.icon}</span>
+                    <span className="nav-group-text">
+                      <span className="nav-group-num">{section.num}.</span>
+                      {section.label}
+                    </span>
+                    {section.partiallyCovered && (
+                      <span className="badge-partial" title="Partially covered">~</span>
+                    )}
                   </span>
                   <svg
                     className={`nav-chevron${isOpen ? ' open' : ''}`}
                     width="12" height="12" viewBox="0 0 12 12" fill="none"
                   >
-                    <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </button>
 
                 {isOpen && (
                   <div className="nav-children">
-                    {group.children?.map(child => (
-                      <NavChildItem key={child.label} item={child} onClose={() => setOpen(false)} />
-                    ))}
+                    {section.items.map(item => {
+                      const isActive = pathname === `/topics/${item.slug}`;
+                      return (
+                        <Link
+                          key={item.slug}
+                          href={`/topics/${item.slug}`}
+                          className={`nav-child${isActive ? ' active' : ''}${item.notCovered ? ' not-covered' : ''}`}
+                          onClick={close}
+                          title={item.notCovered ? 'Not yet covered' : undefined}
+                        >
+                          <span className="nav-child-num">{item.num}</span>
+                          <span className="nav-child-label">{item.label}</span>
+                          {item.notCovered && <span className="nav-child-dot" />}
+                        </Link>
+                      );
+                    })}
                   </div>
                 )}
               </div>
