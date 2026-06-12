@@ -1,5 +1,7 @@
 # The Task Tool
 
+*The internal mechanism Claude uses to spawn and orchestrate subagents during agentic execution.*
+
 The Task tool is the internal Claude Code mechanism for spawning subagents. It is not a user-facing feature — it is a tool Claude calls autonomously during agentic execution, the same way it calls Read, Write or Bash.
 
 ## Key Facts

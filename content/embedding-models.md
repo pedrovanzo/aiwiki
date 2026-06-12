@@ -1,6 +1,6 @@
 # Choosing an Embedding Model
 
-How embedding models work and how to select one based on language, domain and cost.
+*How to select an embedding model based on language, domain, and cost.*
 
 This topic will be covered in a future session. Content will be added here once explored.
 

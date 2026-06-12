@@ -1,5 +1,7 @@
 # Agentic Memory
 
+*How agents persist knowledge across interactions, sessions, and tasks.*
+
 Memory is what separates a capable agent from a forgetful one. Without memory, every interaction starts from zero — the agent has no awareness of past decisions, user preferences, accumulated knowledge or learned procedures.
 
 ## Why Memory Matters in Agentic Systems

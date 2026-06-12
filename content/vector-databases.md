@@ -1,5 +1,7 @@
 # Choosing a Vector Database
 
+*The storage and search layer of a RAG pipeline — how to choose the right one for your scale and constraints.*
+
 The vector database is the storage and search layer of a RAG pipeline. The right choice depends on your infrastructure situation, scale requirements and how much operational overhead you are willing to accept.
 
 ## The Options

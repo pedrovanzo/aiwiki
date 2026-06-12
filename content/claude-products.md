@@ -1,5 +1,7 @@
 # Claude Products Overview
 
+*The family of Claude models and surfaces — from the API to Claude Code.*
+
 Claude is not a single product — it is a family of models accessible through different surfaces, each with different capabilities, use cases and levels of control.
 
 ## The Surfaces

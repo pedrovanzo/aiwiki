@@ -1,5 +1,7 @@
 # RAG vs Manual Context Injection
 
+*The difference between manually injecting context and letting a retrieval system decide what's relevant.*
+
 These two patterns share the same spirit — grounding model responses in external documents — but differ in one critical way: who decides what gets fetched.
 
 ## Manual Context Injection

@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+*Claude Code's primary mechanism for encoding project-specific behavior and conventions.*
+
 CLAUDE.md is a persistent instruction file that defines behavior, conventions and rules for Claude Code sessions. It is Claude Code's primary mechanism for procedural memory — encoding how Claude should behave throughout a project without repeating instructions in every prompt.
 
 ## What It Does

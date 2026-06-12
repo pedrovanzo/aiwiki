@@ -1,5 +1,7 @@
 # Memory Frameworks
 
+*External tools and libraries that give LLMs persistent memory beyond the native context window.*
+
 Memory frameworks are the external tools you assemble around an LLM to give it persistent memory capabilities beyond the native context window. Each framework has a different philosophy, strength and target use case.
 
 ---

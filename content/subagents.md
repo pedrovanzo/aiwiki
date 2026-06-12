@@ -1,5 +1,7 @@
 # Subagents
 
+*Isolated model calls orchestrated by a parent agent to parallelize or scope complex work.*
+
 A subagent is a separate model inference call (or series of calls) that runs with its own isolated context window, is initiated and orchestrated by a parent agent, receives only explicitly passed context, and returns a result back to the parent.
 
 ---

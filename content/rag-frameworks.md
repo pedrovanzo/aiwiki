@@ -1,5 +1,7 @@
 # RAG Frameworks & Tools
 
+*Libraries and platforms that handle the plumbing between RAG pipeline components.*
+
 A full RAG pipeline requires assembling multiple components — ingestion, embedding, retrieval and generation. RAG frameworks handle the plumbing between these components so you focus on the knowledge base and the queries, not the infrastructure.
 
 ---

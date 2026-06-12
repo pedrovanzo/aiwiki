@@ -1,5 +1,7 @@
 # Memory Type Decision Table
 
+*A lookup table for matching edge cases to the right memory type and tooling.*
+
 Use this table to identify the right memory type and tooling for a given edge case.
 
 | Edge Case | Memory Type | Recommended Tools |

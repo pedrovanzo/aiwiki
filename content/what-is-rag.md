@@ -1,5 +1,7 @@
 # What is RAG (Retrieval-Augmented Generation)
 
+*The architectural pattern that gives models access to external knowledge at inference time.*
+
 RAG is an architectural pattern where, instead of relying solely on the model's trained knowledge, the system dynamically fetches relevant information at inference time and injects it into the context before the model generates a response.
 
 The core problem RAG solves: a model's knowledge is frozen at training time. RAG gives it access to external, up-to-date, or domain-specific knowledge on demand — without retraining.

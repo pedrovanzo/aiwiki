@@ -1,5 +1,7 @@
 # RAG Pipeline — Components & Architecture
 
+*The four building blocks of a RAG system and how they fit together.*
+
 A full RAG system is assembled from four components. Each one has a distinct role and can be swapped independently — you can change your vector database without touching your embedding model, or switch LLMs without rebuilding the ingestion pipeline.
 
 ---

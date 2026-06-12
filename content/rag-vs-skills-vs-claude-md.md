@@ -1,5 +1,7 @@
 # RAG vs Skills vs CLAUDE.md — When to Use What
 
+*Three ways to inject knowledge into Claude — they serve distinct roles and operate at different layers.*
+
 These three mechanisms all inject knowledge or behavior into Claude, but they serve distinct roles and operate at different layers.
 
 | Question | Best Mechanism |

@@ -1,6 +1,6 @@
 # Prompt Engineering for RAG
 
-How to structure augmented prompts and write defensive instructions for reliable retrieval-grounded outputs.
+*How to structure augmented prompts for reliable, retrieval-grounded outputs.*
 
 This topic will be covered in a future session. Content will be added here once explored.
 

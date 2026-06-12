@@ -1,5 +1,7 @@
 # What is Agentic AI
 
+*AI systems that plan, decide, and act across multi-step tasks with minimal human intervention.*
+
 Agentic AI refers to AI systems that go beyond single-turn question-and-answer interactions. An agentic system can plan, make decisions, use tools, and execute multi-step tasks autonomously — with minimal or no human intervention at each step.
 
 ## What Makes an AI System "Agentic"

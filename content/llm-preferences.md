@@ -1,6 +1,6 @@
 # LLM Preferences & Usage Patterns
 
-Personal breakdown of Claude, Gemini and ChatGPT — preferred use cases, strengths and exactly how each one fits into my workflow.
+*A personal breakdown of Claude, Gemini, and ChatGPT — preferred use cases and how each fits my workflow.*
 
 This topic will be filled in by the author in a future session.  Content will be added here once explored.
 

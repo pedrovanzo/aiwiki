@@ -1,5 +1,7 @@
 # When to Use RAG
 
+*The decision criteria for choosing a full RAG pipeline over simpler context injection approaches.*
+
 The decision between manual context injection and a full RAG pipeline comes down to three factors: scale, dynamism and who decides what is relevant.
 
 ## Use Manual Context Injection When

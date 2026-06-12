@@ -1,5 +1,7 @@
 # Hooks
 
+*Event-driven triggers that attach behavior to Claude's tool calls without modifying prompts or skills.*
+
 Hooks are event-driven triggers that fire automatically before or after specific tool calls in Claude Code. They allow you to attach behavior to Claude's actions without modifying the prompts or skills themselves.
 
 ## How Hooks Work

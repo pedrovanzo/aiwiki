@@ -1,5 +1,7 @@
 # Memory Types & Usage Guide
 
+*The four distinct memory types in agentic systems and when to reach for each one.*
+
 The four memory types are not interchangeable — each one serves a distinct role in an agentic system. Understanding which type to reach for in a given situation is one of the core design decisions when building an agent.
 
 ---

@@ -1,5 +1,7 @@
 # Framework Comparison Table
 
+*Side-by-side comparison of all memory and RAG frameworks covered in this knowledge base.*
+
 Side-by-side comparison of all memory and RAG frameworks covered in this knowledge base.
 
 ## Memory Frameworks

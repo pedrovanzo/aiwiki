@@ -1,5 +1,7 @@
 # Multilingual Usage in Claude
 
+*Practical guidance for running Claude workflows across multiple languages.*
+
 For the full breakdown of language quality, mid-session switching and writing skills for multilingual teams, see [Language & Output Quality](/topics/language-output-quality).
 
 ## Quick Reference for Multilingual Claude Code Workflows

@@ -1,5 +1,7 @@
 # Language & Output Quality
 
+*How language choice affects model output quality, and what that means for non-English workflows.*
+
 ## Is There a Significant Difference Between English and Portuguese?
 
 Yes, but smaller than most people assume for Brazilian Portuguese specifically. Portuguese is a major world language with strong online presence, so it is well-represented in training data. The gap is most visible in:

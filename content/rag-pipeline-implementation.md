@@ -1,5 +1,7 @@
 # RAG Pipeline — Implementation Walkthrough
 
+*A concrete walkthrough of building a RAG pipeline, from ingestion to query.*
+
 ## The Edge Case
 
 A development team has 200+ markdown files — docs, ADRs, runbooks, API specs. Developers want to query them in natural language without manually hunting through files.

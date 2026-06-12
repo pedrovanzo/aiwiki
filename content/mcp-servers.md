@@ -1,5 +1,7 @@
 # MCP Servers
 
+*The standard protocol that connects external tools and data sources to LLMs.*
+
 MCP Servers (Model Context Protocol) are external service connectors that expose tools and data sources to Claude via a standard protocol.
 
 This topic will be covered in a dedicated session. Content will be added here once explored.

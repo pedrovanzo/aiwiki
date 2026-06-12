@@ -1,5 +1,7 @@
 # Skills
 
+*Reusable prompt files that define how Claude performs specific recurring tasks.*
+
 A skill is a structured prompt file (typically a markdown file with a SKILL.md name) that encodes how Claude should perform a specific recurring task. Skills are Claude Code's mechanism for reusable, composable behavior.
 
 ## What a Skill Contains

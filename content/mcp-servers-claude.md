@@ -1,6 +1,6 @@
 # MCP Servers in Claude
 
-How MCP Servers are configured and used specifically within Claude Code and the broader Claude ecosystem.
+*How MCP servers are configured and used specifically within Claude Code.*
 
 This topic will be covered in a dedicated session. Content will be added here once explored.
 

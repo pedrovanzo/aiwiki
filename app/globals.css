@@ -21,6 +21,35 @@
 
 html { scroll-behavior: smooth; }
 
+/* ── SCROLLBAR ───────────────────────────────────── */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #30363d transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -143,44 +172,12 @@ body {
   transform: rotate(180deg);
 }
 
-/* Group label layout */
+/* Group label */
 .nav-group-label {
-  display: flex;
-  align-items: center;
-  gap: 7px;
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.nav-group-icon {
-  font-size: 14px;
-  flex-shrink: 0;
-}
-
-/* Nav group label internals */
-.nav-group-text {
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.nav-group-num {
-  font-size: 10px;
-  color: var(--muted);
-  flex-shrink: 0;
-}
-
-.badge-partial {
-  font-size: 10px;
-  color: #f59e0b;
-  flex-shrink: 0;
-  margin-left: 2px;
 }
 
 /* Sub-items */
@@ -228,15 +225,6 @@ body {
   opacity: 0.7;
 }
 
-.nav-child-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--muted);
-  opacity: 0.5;
-  flex-shrink: 0;
-  margin-left: auto;
-}
 
 .sidebar-toggle {
   display: none;
@@ -286,6 +274,16 @@ body {
   font-weight: 700;
   margin-bottom: 8px;
   color: #fff;
+}
+
+/* Topic description — italic line immediately after the h1 */
+.content h1 + p > em:only-child {
+  display: block;
+  font-style: normal;
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 32px;
+  line-height: 1.6;
 }
 
 .content h2 {
